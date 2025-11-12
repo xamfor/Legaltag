@@ -45,7 +45,7 @@ class _LupaKataSandiState extends State<LupaKataSandi> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
-                      'assets/Logo.png',
+                      'assets/logo.png',
                       width: 100,
                       height: 100,
                     ),
