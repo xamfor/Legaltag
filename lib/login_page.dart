@@ -14,16 +14,15 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF0A574A), 
+      backgroundColor: const Color(0xFF0A574A),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             children: [
-              // BAGIAN BACKGROUND 
+              // BAGIAN BACKGROUND
               Stack(
                 alignment: Alignment.center,
                 children: [
-                  // Background motif
                   Container(
                     height: 280,
                     width: double.infinity,
@@ -43,7 +42,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
 
-                  // Logo 
+                  // Logo
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -68,7 +67,7 @@ class _LoginPageState extends State<LoginPage> {
 
               const SizedBox(height: 20),
 
-              //  BAGIAN FORM 
+              //  BAGIAN FORM
               Container(
                 width: double.infinity,
                 decoration: const BoxDecoration(
@@ -114,23 +113,29 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                     const SizedBox(height: 6),
-                  TextField(
-                  decoration: InputDecoration(
-                    hintText: "Typing...",
-                    suffixIcon: const Icon(Icons.person_outline), 
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8),
-                      borderSide: const BorderSide(
-                        color: Color(0xFF0A574A),
-                        width: 2,
+                    TextField(
+                      decoration: InputDecoration(
+                        hintText: "Typing...",
+                        suffixIcon: Padding(
+                          padding: const EdgeInsets.all(12.0),
+                          child: Image.asset(
+                            'assets/user.png',
+                            width: 22,
+                            height: 22,
+                          ),
+                        ),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(4),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(4),
+                          borderSide: const BorderSide(
+                            color: Color(0xFF0A574A),
+                            width: 2,
+                          ),
+                        ),
                       ),
                     ),
-                  ),
-                ),
-
 
                     const SizedBox(height: 16),
 
@@ -150,24 +155,26 @@ class _LoginPageState extends State<LoginPage> {
                       obscureText: _obscurePassword,
                       decoration: InputDecoration(
                         hintText: "Masukkan Kata Sandi",
-                        suffixIcon: IconButton(
-                          icon: Icon(
-                            _obscurePassword
-                                ? Icons.visibility_off_outlined
-                                : Icons.visibility_outlined,
-                          ),
-                          onPressed: () {
-                            
+                        suffixIcon: GestureDetector(
+                          onTap: () {
                             setState(() {
                               _obscurePassword = !_obscurePassword;
                             });
                           },
+                          child: Padding(
+                            padding: const EdgeInsets.all(12.0),
+                            child: Image.asset(
+                              'assets/eye.png',
+                              width: 22,
+                              height: 22,
+                            ),
+                          ),
                         ),
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.circular(4),
                         ),
                         focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.circular(4),
                           borderSide: const BorderSide(
                             color: Color(0xFF0A574A),
                             width: 2,
@@ -178,11 +185,18 @@ class _LoginPageState extends State<LoginPage> {
 
                     const SizedBox(height: 10),
 
-                    // 🔸 Lupa Kata Sandi
+                    //  Lupa Kata Sandi
                     Align(
                       alignment: Alignment.center,
                       child: TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const LupaKataSandi(),
+                            ),
+                          );
+                        },
                         child: const Text(
                           "Lupa Kata Sandi ?",
                           style: TextStyle(
@@ -203,13 +217,15 @@ class _LoginPageState extends State<LoginPage> {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => const LupaKataSandi()),
+                            MaterialPageRoute(
+                              builder: (context) => const LupaKataSandi(),
+                            ),
                           );
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: const Color(0xFF0A574A),
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8),
+                            borderRadius: BorderRadius.circular(4),
                           ),
                         ),
                         child: const Text(
@@ -224,6 +240,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
 
                     const SizedBox(height: 30),
+
                     // FOOTER
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,

@@ -114,21 +114,28 @@ class _LupaKataSandiState extends State<LupaKataSandi> {
                       ),
                       const SizedBox(height: 6),
                       TextField(
-                        decoration: InputDecoration(
-                          hintText: "Typing...",
-                          suffixIcon: const Icon(Icons.person_outline),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(8),
+                      decoration: InputDecoration(
+                        hintText: "Typing...",
+                        suffixIcon: Padding(
+                          padding: const EdgeInsets.all(12.0),
+                          child: Image.asset(
+                            'assets/user.png', 
+                            width: 22,
+                            height: 22,
                           ),
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(8),
-                            borderSide: const BorderSide(
-                              color: Color(0xFF0A574A),
-                              width: 2,
-                            ),
+                        ),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(4),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(4),
+                          borderSide: const BorderSide(
+                            color: Color(0xFF0A574A),
+                            width: 2,
                           ),
                         ),
                       ),
+                    ),
                       const SizedBox(height: 24),
 
                       // Tombol Kirim
@@ -145,7 +152,7 @@ class _LupaKataSandiState extends State<LupaKataSandi> {
                           style: ElevatedButton.styleFrom(
                             backgroundColor: const Color(0xFF0A574A),
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(9),
+                              borderRadius: BorderRadius.circular(4),
                             ),
                           ),
                           child: const Text(
