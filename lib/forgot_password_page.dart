@@ -139,6 +139,7 @@ class _LupaKataSandiState extends State<LupaKataSandi> {
                       const SizedBox(height: 24),
 
                       // Tombol Kirim
+                      
                       SizedBox(
                         width: double.infinity,
                         height: 48,
