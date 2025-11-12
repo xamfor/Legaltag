@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:legaltag/lupa_kata_sandi.dart';
+import 'package:legaltag/forgot_password_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});

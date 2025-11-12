@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:legaltag/login.dart';
+import 'package:legaltag/login_page.dart';
 
 class LupaKataSandi extends StatefulWidget {
   const LupaKataSandi({super.key});
