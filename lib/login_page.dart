@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:legaltag/forgot_password_page.dart';
+import 'package:legaltag/main_frame_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -213,7 +214,9 @@ class _LoginPageState extends State<LoginPage> {
                       width: double.infinity,
                       height: 48,
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) =>MainFramePage()));
+                        },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: const Color(0xFF005E44),
                           shape: RoundedRectangleBorder(

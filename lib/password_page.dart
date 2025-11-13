@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:legaltag/login_page.dart';
 
 class PasswordPage extends StatefulWidget {
   const PasswordPage({super.key});
@@ -11,6 +12,90 @@ class _PasswordPageState extends State<PasswordPage> {
   bool _obscurePassword1 = true;
   bool _obscurePassword2 = true;
 
+  // Panggil ini saat tombol Simpan ditekan
+  void _onSimpanPressed() {
+    // (1) Tampilkan popup
+    _showSuccessPopup();
+
+    // (2) Setelah 3 detik: tutup popup lalu pindah halaman
+    Future.delayed(const Duration(seconds: 1), () {
+      // Pastikan widget masih mounted sebelum navigasi
+      if (!mounted) return;
+
+      // tutup dialog (jika masih terbuka)
+
+      // Navigator.of(context, rootNavigator: true).pop();
+      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => LoginPage()));
+    });
+  }
+
+  // Widget Dialog custom yang meniru desain gambar
+  void _showSuccessPopup() {
+    showDialog(
+      context: context,
+      barrierDismissible: false, // jangan tutup saat klik di luar
+      builder: (context) {
+        return Dialog(
+          backgroundColor: Colors.transparent,
+          insetPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(28),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.08),
+                  blurRadius: 20,
+                  offset: const Offset(0, 8),
+                ),
+              ],
+            ),
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 28),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                SizedBox(
+                  height: 180,
+                  child: Image.asset(
+                    'assets/vector.png', 
+                    fit: BoxFit.contain,
+                  ),
+                ),
+
+                const SizedBox(height: 12),
+
+                // Judul "Berhasil"
+                const Text(
+                  'Berhasil',
+                  style: TextStyle(
+                    fontSize: 32,
+                    fontWeight: FontWeight.w800,
+                    color: Colors.black,
+                  ),
+                ),
+
+                const SizedBox(height: 14),
+
+                // Subteks
+                const Text(
+                  'Kata sandi berhasil diperbarui',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 20,
+                    height: 1.25,
+                    color: Colors.black87,
+                  ),
+                ),
+
+                const SizedBox(height: 6),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,20 +105,20 @@ class _PasswordPageState extends State<PasswordPage> {
           child: Column(
             children: [
               // 🔹 HEADER ATAS
-              Container(
-                width: double.infinity,
-                padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 20),
-                decoration: const BoxDecoration(
-                  color: Color(0xFF005E44),
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(20),
-                    bottomRight: Radius.circular(20),
+                Container(
+                  width: 375,
+                  height: 100,
+                  decoration: const BoxDecoration(
+                    color: Color(0xFF005E44),
+                    borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(20),
+                      bottomRight: Radius.circular(20),
+                    ),
                   ),
-                ),
-                child: Column(
-                  children: [
-                    Row(
+                  child: Center( 
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center, 
                       children: [
                         Image.asset(
                           'assets/logo.png',
@@ -44,17 +129,18 @@ class _PasswordPageState extends State<PasswordPage> {
                         const SizedBox(width: 10),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center, // 
                           children: const [
                             Text(
-                              "Kata Sandi",
+                              "kata Sandi",
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 18,
+                                fontSize: 14,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
                             Text(
-                              "Legaltag",
+                              "Legatag",
                               style: TextStyle(
                                 color: Colors.white70,
                                 fontSize: 14,
@@ -64,10 +150,8 @@ class _PasswordPageState extends State<PasswordPage> {
                         ),
                       ],
                     ),
-                  ],
+                  ),
                 ),
-              ),
-
               const SizedBox(height: 40),
 
               // FORM GANTI PASSWORD
@@ -168,7 +252,7 @@ class _PasswordPageState extends State<PasswordPage> {
                       height: 48,
                       child: ElevatedButton(
                         onPressed: () {
-                          // Aksi simpan di sini
+                          _onSimpanPressed();
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: const Color(0xFF005E44),

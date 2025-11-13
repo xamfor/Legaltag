@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:legaltag/login_page.dart';
+import 'package:legaltag/main_frame_page.dart';
 
 void main() {
   runApp(const MainApp());

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:legaltag/login_page.dart';
+import 'package:legaltag/password_page.dart';
 
 class LupaKataSandi extends StatefulWidget {
   const LupaKataSandi({super.key});
@@ -145,9 +146,9 @@ class _LupaKataSandiState extends State<LupaKataSandi> {
                         height: 48,
                         child: ElevatedButton(
                           onPressed: () {
-                          Navigator.pop(
+                          Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => const LoginPage()),
+                            MaterialPageRoute(builder: (context) => const PasswordPage()),
                           );
                         },
                           style: ElevatedButton.styleFrom(
