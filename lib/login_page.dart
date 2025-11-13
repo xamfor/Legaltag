@@ -14,7 +14,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF0A574A),
+      backgroundColor: const Color(0xFF005E44),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -33,8 +33,8 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       gradient: LinearGradient(
                         colors: [
-                          const Color(0xFF0A574A).withOpacity(0.95),
-                          const Color(0xFF0A574A).withOpacity(0.8),
+                          const Color(0xFF005E44).withOpacity(0.95),
+                          const Color(0xFF005E44).withOpacity(0.8),
                         ],
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter,
@@ -85,7 +85,7 @@ class _LoginPageState extends State<LoginPage> {
                     const Text(
                       "Login",
                       style: TextStyle(
-                        color: Color(0xFF0A574A),
+                        color: Color(0xFF005E44),
                         fontSize: 26,
                         fontWeight: FontWeight.bold,
                       ),
@@ -95,7 +95,7 @@ class _LoginPageState extends State<LoginPage> {
                       "Selamat datang di Aplikasi Legaltag\nSilahkan Masuk dengan akun anda",
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        color: Color(0xFF0A574A),
+                        color: Color(0xFF005E44),
                         fontSize: 14,
                       ),
                     ),
@@ -130,7 +130,7 @@ class _LoginPageState extends State<LoginPage> {
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(4),
                           borderSide: const BorderSide(
-                            color: Color(0xFF0A574A),
+                            color: Color(0xFF005E44),
                             width: 2,
                           ),
                         ),
@@ -176,7 +176,7 @@ class _LoginPageState extends State<LoginPage> {
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(4),
                           borderSide: const BorderSide(
-                            color: Color(0xFF0A574A),
+                            color: Color(0xFF005E44),
                             width: 2,
                           ),
                         ),
@@ -200,7 +200,7 @@ class _LoginPageState extends State<LoginPage> {
                         child: const Text(
                           "Lupa Kata Sandi ?",
                           style: TextStyle(
-                            color: Color(0xFF0A574A),
+                            color: Color(0xFF005E44),
                             fontWeight: FontWeight.w600,
                           ),
                         ),
@@ -213,16 +213,9 @@ class _LoginPageState extends State<LoginPage> {
                       width: double.infinity,
                       height: 48,
                       child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const LupaKataSandi(),
-                            ),
-                          );
-                        },
+                        onPressed: () {},
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color(0xFF0A574A),
+                          backgroundColor: const Color(0xFF005E44),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(4),
                           ),

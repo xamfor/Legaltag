@@ -12,7 +12,7 @@ class _LupaKataSandiState extends State<LupaKataSandi> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF0A574A),
+      backgroundColor: const Color(0xFF005E44),
       body: SafeArea(
         child: Column(
           children: [
@@ -31,8 +31,8 @@ class _LupaKataSandiState extends State<LupaKataSandi> {
                     ),
                     gradient: LinearGradient(
                       colors: [
-                        const Color(0xFF0A574A).withOpacity(0.95),
-                        const Color(0xFF0A574A).withOpacity(0.8),
+                        const Color(0xFF005E44).withOpacity(0.95),
+                        const Color(0xFF005E44).withOpacity(0.8),
                       ],
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
@@ -85,7 +85,7 @@ class _LupaKataSandiState extends State<LupaKataSandi> {
                       const Text(
                         "Lupa Kata Sandi",
                         style: TextStyle(
-                          color: Color(0xFF0A574A),
+                          color: Color(0xFF005E44),
                           fontSize: 26,
                           fontWeight: FontWeight.bold,
                         ),
@@ -95,7 +95,7 @@ class _LupaKataSandiState extends State<LupaKataSandi> {
                         "Masukkan alamat email atau No. Telepon\nuntuk mengubah Kata Sandi",
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          color: Color(0xFF0A574A),
+                          color: Color(0xFF005E44),
                           fontSize: 14,
                         ),
                       ),
@@ -130,7 +130,7 @@ class _LupaKataSandiState extends State<LupaKataSandi> {
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(4),
                           borderSide: const BorderSide(
-                            color: Color(0xFF0A574A),
+                            color: Color(0xFF005E44),
                             width: 2,
                           ),
                         ),
@@ -145,13 +145,13 @@ class _LupaKataSandiState extends State<LupaKataSandi> {
                         height: 48,
                         child: ElevatedButton(
                           onPressed: () {
-                          Navigator.push(
+                          Navigator.pop(
                             context,
                             MaterialPageRoute(builder: (context) => const LoginPage()),
                           );
                         },
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xFF0A574A),
+                            backgroundColor: const Color(0xFF005E44),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(4),
                             ),
